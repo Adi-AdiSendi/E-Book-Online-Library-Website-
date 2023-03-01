@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% block title %}Login Bookify{% endblock %}
+{% block content %}
+<section class="search-section">
+    <h1>Search</h1>
+    <div class="search-book-search-container">
+        <form class="search-book-search-form" role="search">
+            <input class="form-control search-bar my-1 mb-1 p-lg-2 search-form-control" type="search" placeholder="Search"
+                aria-label="Search" value="{{term}}"/>
+            <button class="btn form-control submit-button p-3" type="submit">
+                Search Book
+            </button>
+        </form>
+    </div>
+    <div class="search-container">
+        {% for book in books %}
+        <div class="container search-book-container">
+            <div class="search-BookContainer">
+                <div class="search-BookimgContainer">
+                    <img class="search-book-preview-img" src="/image/{{book.image}}" />
+                </div>
+                <div class="search-book-info-card">
+                    <h3 class="search-book-name"><strong>{{book.title}}</strong></h3>
+                    <h6 class="search-book-author"><strong>By {{book.authors}}</strong></h4>
+                        <p class="search-book-publish">First published: {{book.released_date}}</p>
+                        <!-- <p class="search-book-pages">{{book.pages}} Pages</p> -->
+                </div>
+                <div class="search-right-side-card">
+                    <button id="submit" type="submit" class="btn btn-primary btn-primary-login">
+                        <img class="search-bookmark-icon" src="/images/icons/bookmark-icon-uncklicked.svg" alt="" />                    </button>  
+                    <button class="search-view-button" onclick="location.href='/book/{{book.book_isbn}}'">View</button>
+                    <button class="search-read-button" onclick="location.href='/book/{{book.book_isbn}}/read'">Read</button>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+</section>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+{% block title %} {{title}} {% endblock %}
+{% block content %}
+<section class="view-info-section">
+    <section class="view-book-information-section">
+        <h1>Book information</h1>
+        <div class="container view-book-container">
+            <div class="view-BookContainer">
+                <div class="view-BookimgContainer">
+                    <img class="view-book-preview-img" src="/cover/{{cover_photo}}" />
+                    <div class="view-UnderBook">
+                        <form class="bookmark-val" action="/book/{{book.isbn}}/save" method="post" novalidate>
+                            <button id="submit" type="submit" class="btn btn-primary btn-primary-login">
+                                <img class="view-Bookmarkimg" src="/images/icons/bookmark-icon-uncklicked.svg" />
+                            </button>                            </form>
+                        
+                        <button class="view-buttonRead" onclick="location.href='/book/{{book.book_isbn}}/read'">Read Now</button> <!-- TODO add a link to the book -->
+                    </div>
+                </div>
+                <div class="view-book-info-card">
+                    <h3 class="view-book-name"><strong>{{title}}</strong></h3>
+                    <h6 class="view-book-author"><strong>By {{authors}}</strong></h4>
+                        <h6 class="view-book-isbn"><strong>ISBN-10: </strong>{{book_isbn}}</h6>
+
+                        <div class="view-book-details">
+                            <div class="info01">
+                                Published<br />
+                                <span class="underinfo01">{{release_date}}</span>
+                            </div>
+                            <div class="info02">
+                                Subject<br /><span class="underinfo02">{{subject}}</span>
+                            </div>
+                            <div class="info03">
+                                Language<br /><span class="underinfo03">{{language}}</span>
+                            </div>
+                            <!-- ?? we can add publisher too -->
+                        </div>
+                        <p>
+                            {{description}}
+                        </p>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+{% endblock %}
