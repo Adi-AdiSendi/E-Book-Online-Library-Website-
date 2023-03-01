@@ -36,10 +36,17 @@ Version:
     "sqlite3": "^5.1.2"
 ********
 #Project Information 
+
 This Project was made in group project collabration for the web development course:
+
 Name / Student_ID
+
 Adi Hani Sendi / 201779270
+
 Tareq Saleh Alqarawi / 201826040
+
 Mohammed Alwaleed Abushwarib / 201935730
+
 Fadel Hassan Abbas / 201951290
+
 ********
